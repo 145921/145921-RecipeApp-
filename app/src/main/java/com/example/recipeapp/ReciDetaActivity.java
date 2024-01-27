@@ -18,6 +18,7 @@ import com.example.recipeapp.Listeners.InstruListen;
 import com.example.recipeapp.Listeners.ReciClickListen;
 import com.example.recipeapp.Listeners.ReciDetaListen;
 import com.example.recipeapp.Listeners.SimiReciListen;
+import com.example.recipeapp.Models.Ingredient;
 import com.example.recipeapp.Models.InstructionsResponse;
 import com.example.recipeapp.Models.RecipeDetailsResponse;
 import com.example.recipeapp.Models.SimilarRecipeResponse;
@@ -123,5 +124,6 @@ public class ReciDetaActivity extends AppCompatActivity {
             Toast.makeText(ReciDetaActivity.this, message, Toast.LENGTH_SHORT).show();
         }
     };
+
 
 }
