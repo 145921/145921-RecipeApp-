@@ -33,7 +33,7 @@ public class SimiReciAdap extends RecyclerView.Adapter<SimilarRecipeViewHolder>{
     @NonNull
     @Override
     public SimilarRecipeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new SimilarRecipeViewHolder(LayoutInflater.from(context).inflate(R.layout.list_similar_recipe, parent, false));
+        return new SimilarRecipeViewHolder(LayoutInflater.from(context).inflate(R.layout.list_simi_reci, parent, false));
     }
 
     @Override

@@ -60,9 +60,9 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter arrayAdapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.tags,
-                R.layout.spinner_text
+                R.layout.spin_text
         );
-        arrayAdapter.setDropDownViewResource(R.layout.spinner_inner_text);
+        arrayAdapter.setDropDownViewResource(R.layout.spin_in_text);
         spinner.setAdapter(arrayAdapter);
         spinner.setOnItemSelectedListener(spinnerSelectedListener);
 

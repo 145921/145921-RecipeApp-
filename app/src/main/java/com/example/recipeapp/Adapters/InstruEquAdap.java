@@ -29,7 +29,7 @@ public class InstruEquAdap extends RecyclerView.Adapter<InstructionEquipmentsVie
     @NonNull
     @Override
     public InstructionEquipmentsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new InstructionEquipmentsViewHolder(LayoutInflater.from(context).inflate(R.layout.list_instructions_step_items, parent, false));
+        return new InstructionEquipmentsViewHolder(LayoutInflater.from(context).inflate(R.layout.list_instruct_ste_items, parent, false));
     }
 
     @Override

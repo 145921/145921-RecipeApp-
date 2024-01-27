@@ -28,7 +28,7 @@ public class InstruStepAdap extends RecyclerView.Adapter<InstructionStepViewHold
     @NonNull
     @Override
     public InstructionStepViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new InstructionStepViewHolder(LayoutInflater.from(context).inflate(R.layout.list_instructions_steps, parent, false));
+        return new InstructionStepViewHolder(LayoutInflater.from(context).inflate(R.layout.list_instruct_steps, parent, false));
     }
 
     @Override

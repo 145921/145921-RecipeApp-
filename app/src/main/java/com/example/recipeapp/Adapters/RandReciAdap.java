@@ -32,7 +32,7 @@ public class RandReciAdap extends RecyclerView.Adapter<RandomRecipeViewHolder> {
     @NonNull
     @Override
     public RandomRecipeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new RandomRecipeViewHolder(LayoutInflater.from(context).inflate(R.layout.list_random_recipe, parent, false));
+        return new RandomRecipeViewHolder(LayoutInflater.from(context).inflate(R.layout.list_rand_reci, parent, false));
     }
 
     @Override

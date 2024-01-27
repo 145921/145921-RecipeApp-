@@ -28,7 +28,7 @@ public class InstruAdap extends RecyclerView.Adapter<InstructionsViewHolder>{
     @NonNull
     @Override
     public InstructionsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new InstructionsViewHolder(LayoutInflater.from(context).inflate(R.layout.list_instructions, parent,false));
+        return new InstructionsViewHolder(LayoutInflater.from(context).inflate(R.layout.list_instruct, parent,false));
     }
 
     @Override

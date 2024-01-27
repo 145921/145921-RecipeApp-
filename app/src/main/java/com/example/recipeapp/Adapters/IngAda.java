@@ -29,7 +29,7 @@ public class IngAda extends RecyclerView.Adapter<IngredientsViewHolder>{
     @NonNull
     @Override
     public IngredientsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new IngredientsViewHolder(LayoutInflater.from(context).inflate(R.layout.list_meal_ingredients, parent, false));
+        return new IngredientsViewHolder(LayoutInflater.from(context).inflate(R.layout.list_meal_ingreds, parent, false));
     }
 
     @Override
