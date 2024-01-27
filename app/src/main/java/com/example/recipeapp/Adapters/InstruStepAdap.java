@@ -15,12 +15,12 @@ import com.example.recipeapp.R;
 
 import java.util.List;
 
-public class InstructionStepAdapter extends RecyclerView.Adapter<InstructionStepViewHolder> {
+public class InstruStepAdap extends RecyclerView.Adapter<InstructionStepViewHolder> {
 
     Context context;
     List<Step> list;
 
-    public InstructionStepAdapter(Context context, List<Step> list) {
+    public InstruStepAdap(Context context, List<Step> list) {
         this.context = context;
         this.list = list;
     }
@@ -38,12 +38,12 @@ public class InstructionStepAdapter extends RecyclerView.Adapter<InstructionStep
 
         holder.recycler_instructions_ingredients.setHasFixedSize(true);
         holder.recycler_instructions_ingredients.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
-        InstructionsIngredientsAdapter instructionsIngredientsAdapter = new InstructionsIngredientsAdapter(context, list.get(position).ingredients);
+        InstruIngreAdap instructionsIngredientsAdapter = new InstruIngreAdap(context, list.get(position).ingredients);
         holder.recycler_instructions_ingredients.setAdapter(instructionsIngredientsAdapter);
 
         holder.recycler_instructions_equipments.setHasFixedSize(true);
         holder.recycler_instructions_equipments.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false));
-        InstructionsEquipmentsAdapter instructionsEquipmentsAdapter = new InstructionsEquipmentsAdapter(context, list.get(position).equipment);
+        InstruEquAdap instructionsEquipmentsAdapter = new InstruEquAdap(context, list.get(position).equipment);
         holder.recycler_instructions_equipments.setAdapter(instructionsEquipmentsAdapter);
     }
 

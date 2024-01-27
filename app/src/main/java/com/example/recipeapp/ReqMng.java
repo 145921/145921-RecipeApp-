@@ -2,12 +2,10 @@ package com.example.recipeapp;
 
 import android.content.Context;
 
-import androidx.core.location.LocationRequestCompat;
-
-import com.example.recipeapp.Listeners.InstructionsListener;
-import com.example.recipeapp.Listeners.RandomRecipeResponseListener;
-import com.example.recipeapp.Listeners.RecipeDetailsListener;
-import com.example.recipeapp.Listeners.SimilarRecipesListener;
+import com.example.recipeapp.Listeners.InstruListen;
+import com.example.recipeapp.Listeners.RandReciResponListen;
+import com.example.recipeapp.Listeners.ReciDetaListen;
+import com.example.recipeapp.Listeners.SimiReciListen;
 import com.example.recipeapp.Models.InstructionsResponse;
 import com.example.recipeapp.Models.RandomRecipeApiResponse;
 import com.example.recipeapp.Models.RecipeDetailsResponse;
@@ -24,20 +22,20 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
-public class RequestManager {
+public class ReqMng {
     Context context;
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl("https://api.spoonacular.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
-    public RequestManager(Context context) {
+    public ReqMng(Context context) {
         this.context = context;
     }
 
-    public void getRandomRecipes(RandomRecipeResponseListener listener, List<String> tags){
+    public void getRandomRecipes(RandReciResponListen listener, List<String> tags){
         CallRandomRecipes callRandomRecipes = retrofit.create(CallRandomRecipes.class);
-        Call<RandomRecipeApiResponse> call = callRandomRecipes.callRandomRecipe(context.getString(R.string.api_key), "10", tags);
+        Call<RandomRecipeApiResponse> call = callRandomRecipes.callRandomRecipe("1b808664c9964417a7bc312268c1b09e", "10", tags);
         call.enqueue(new Callback<RandomRecipeApiResponse>() {
             @Override
             public void onResponse(Call<RandomRecipeApiResponse> call, Response<RandomRecipeApiResponse> response) {
@@ -55,9 +53,9 @@ public class RequestManager {
         });
     }
 
-    public void getRecipeDetails(RecipeDetailsListener listener, int id){
+    public void getRecipeDetails(ReciDetaListen listener, int id){
         CallRecipeDetails callRecipeDetails = retrofit.create(CallRecipeDetails.class);
-        Call<RecipeDetailsResponse> call = callRecipeDetails.callRecipeDetails(id, context.getString(R.string.api_key));
+        Call<RecipeDetailsResponse> call = callRecipeDetails.callRecipeDetails(id," 1b808664c9964417a7bc312268c1b09e");
         call.enqueue(new Callback<RecipeDetailsResponse>() {
             @Override
             public void onResponse(Call<RecipeDetailsResponse> call, Response<RecipeDetailsResponse> response) {
@@ -75,9 +73,9 @@ public class RequestManager {
         });
     }
 
-    public void getSimilaRecipes(SimilarRecipesListener listener, int id){
+    public void getSimilaRecipes(SimiReciListen listener, int id){
         CallSimilarRecipes callSimilarRecipes = retrofit.create(CallSimilarRecipes.class);
-        Call<List<SimilarRecipeResponse>> call = callSimilarRecipes.callSimilarRecipe(id, "4", context.getString(R.string.api_key));
+        Call<List<SimilarRecipeResponse>> call = callSimilarRecipes.callSimilarRecipe(id, "4", " 1b808664c9964417a7bc312268c1b09e");
         call.enqueue(new Callback<List<SimilarRecipeResponse>>() {
             @Override
             public void onResponse(Call<List<SimilarRecipeResponse>> call, Response<List<SimilarRecipeResponse>> response) {
@@ -95,9 +93,9 @@ public class RequestManager {
         });
     }
 
-    public void getInstructions(InstructionsListener listener, int id){
+    public void getInstructions(InstruListen listener, int id){
         CallInstrustions callInstrustions = retrofit.create(CallInstrustions.class);
-        Call<List<InstructionsResponse>> call = callInstrustions.callInstructions(id, context.getString(R.string.api_key));
+        Call<List<InstructionsResponse>> call = callInstrustions.callInstructions(id, " 1b808664c9964417a7bc312268c1b09e");
         call.enqueue(new Callback<List<InstructionsResponse>>() {
             @Override
             public void onResponse(Call<List<InstructionsResponse>> call, Response<List<InstructionsResponse>> response) {

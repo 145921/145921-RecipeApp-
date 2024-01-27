@@ -18,10 +18,19 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".RecipeDetailsActivity"
+            android:name=".SplashActivity"
             android:exported="false" />
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".SplasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReciDetaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WelcActivity"
             android:exported="true">
 
             <intent-filter>

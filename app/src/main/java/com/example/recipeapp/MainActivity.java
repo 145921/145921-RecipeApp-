@@ -2,7 +2,6 @@ package com.example.recipeapp;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.health.connect.AggregateRecordsRequest;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,9 +14,9 @@ import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.recipeapp.Adapters.RandomRecipeAdapter;
-import com.example.recipeapp.Listeners.RandomRecipeResponseListener;
-import com.example.recipeapp.Listeners.RecipeClickListener;
+import com.example.recipeapp.Adapters.RandReciAdap;
+import com.example.recipeapp.Listeners.RandReciResponListen;
+import com.example.recipeapp.Listeners.ReciClickListen;
 import com.example.recipeapp.Models.RandomRecipeApiResponse;
 
 import java.util.ArrayList;
@@ -25,8 +24,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     ProgressDialog dialog;
-    RequestManager manager;
-    RandomRecipeAdapter randomRecipeAdapter;
+    ReqMng manager;
+    RandReciAdap randomRecipeAdapter;
     RecyclerView recyclerView;
     Spinner spinner;
     List<String> tags = new ArrayList<>();
@@ -67,19 +66,19 @@ public class MainActivity extends AppCompatActivity {
         spinner.setAdapter(arrayAdapter);
         spinner.setOnItemSelectedListener(spinnerSelectedListener);
 
-        manager = new RequestManager(this);
+        manager = new ReqMng(this);
        // manager.getRandomRecipes(randomRecipeResponseListener);
         //dialog.show();
     }
 
-    private final RandomRecipeResponseListener randomRecipeResponseListener = new RandomRecipeResponseListener() {
+    private final RandReciResponListen randomRecipeResponseListener = new RandReciResponListen() {
         @Override
         public void didFetch(RandomRecipeApiResponse response, String message) {
             dialog.dismiss();
             recyclerView = findViewById(R.id.recycler_random);
             recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new GridLayoutManager(MainActivity.this,1));
-            randomRecipeAdapter = new RandomRecipeAdapter(MainActivity.this,response.recipes, recipeClickListener);
+            randomRecipeAdapter = new RandReciAdap(MainActivity.this,response.recipes, recipeClickListener);
             recyclerView.setAdapter(randomRecipeAdapter);
         }
 
@@ -103,10 +102,10 @@ public class MainActivity extends AppCompatActivity {
 
         }
     };
-    private final RecipeClickListener recipeClickListener = new RecipeClickListener() {
+    private final ReciClickListen recipeClickListener = new ReciClickListen() {
         @Override
         public void onRecipeClicked(String id) {
-            startActivity(new Intent(MainActivity.this, RecipeDetailsActivity.class)
+            startActivity(new Intent(MainActivity.this, ReciDetaActivity.class)
                     .putExtra("id", id));
         }
     };

@@ -11,21 +11,20 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.recipeapp.Listeners.RecipeClickListener;
-import com.example.recipeapp.Listeners.SimilarRecipesListener;
+import com.example.recipeapp.Listeners.ReciClickListen;
 import com.example.recipeapp.Models.SimilarRecipeResponse;
 import com.example.recipeapp.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class SimilarRecipeAdapter extends RecyclerView.Adapter<SimilarRecipeViewHolder>{
+public class SimiReciAdap extends RecyclerView.Adapter<SimilarRecipeViewHolder>{
 
     Context context;
     List<SimilarRecipeResponse> list;
-    RecipeClickListener listener;
+    ReciClickListen listener;
 
-    public SimilarRecipeAdapter(Context context, List<SimilarRecipeResponse> list, RecipeClickListener listener) {
+    public SimiReciAdap(Context context, List<SimilarRecipeResponse> list, ReciClickListen listener) {
         this.context = context;
         this.list = list;
         this.listener = listener;

@@ -11,19 +11,19 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.recipeapp.Listeners.RecipeClickListener;
+import com.example.recipeapp.Listeners.ReciClickListen;
 import com.example.recipeapp.Models.Recipe;
 import com.example.recipeapp.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class RandomRecipeAdapter extends RecyclerView.Adapter<RandomRecipeViewHolder> {
+public class RandReciAdap extends RecyclerView.Adapter<RandomRecipeViewHolder> {
     Context context;
     List<Recipe> list;
-    RecipeClickListener listener;
+    ReciClickListen listener;
 
-    public RandomRecipeAdapter(Context context, List<Recipe> list, RecipeClickListener listener) {
+    public RandReciAdap(Context context, List<Recipe> list, ReciClickListen listener) {
         this.context = context;
         this.list = list;
         this.listener = listener;

@@ -1,5 +1,5 @@
 package com.example.recipeapp.Listeners;
 
-public interface RecipeClickListener {
+public interface ReciClickListen {
     void onRecipeClicked(String id);
 }

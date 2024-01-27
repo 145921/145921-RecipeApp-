@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WelcomeActivity"
+    tools:context=".WelcActivity"
     android:background="@color/purple">
 
     <TextView
         android:layout_width="371dp"
         android:layout_height="91dp"
-        android:text="Welcome To Our Recipe Appication"
         android:gravity="center"
+        android:text="Recipe Appication"
+        android:textAlignment="textStart"
         android:textSize="36dp"
         android:textStyle="bold"
-        android:textAlignment="textStart"
         tools:ignore="RtlCompat" />
 
     <ImageView
@@ -22,6 +22,7 @@
         android:layout_height="439dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="170dp"
-        android:src="@drawable/img" />
+        android:src="@drawable/spalsh" />
+
 
 </RelativeLayout>

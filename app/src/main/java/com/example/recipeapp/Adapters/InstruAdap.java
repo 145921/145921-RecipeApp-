@@ -15,12 +15,12 @@ import com.example.recipeapp.R;
 
 import java.util.List;
 
-public class InstructionsAdapter extends RecyclerView.Adapter<InstructionsViewHolder>{
+public class InstruAdap extends RecyclerView.Adapter<InstructionsViewHolder>{
 
     Context context;
     List<InstructionsResponse> list;
 
-    public InstructionsAdapter(Context context, List<InstructionsResponse> list) {
+    public InstruAdap(Context context, List<InstructionsResponse> list) {
         this.context = context;
         this.list = list;
     }
@@ -36,14 +36,14 @@ public class InstructionsAdapter extends RecyclerView.Adapter<InstructionsViewHo
         holder.textView_instruction_name.setText(list.get(position).name);
         holder.recycler_instruction_steps.setHasFixedSize(true);
         holder.recycler_instruction_steps.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
-        InstructionStepAdapter stepAdapter = new InstructionStepAdapter(context, list.get(position).steps);
+        InstruStepAdap stepAdapter = new InstruStepAdap(context, list.get(position).steps);
         holder.recycler_instruction_steps.setAdapter(stepAdapter);
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return list.size();
     }
 }
 class InstructionsViewHolder extends RecyclerView.ViewHolder{

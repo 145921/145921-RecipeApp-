@@ -16,12 +16,12 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsViewHolder>{
+public class IngAda extends RecyclerView.Adapter<IngredientsViewHolder>{
 
     Context context;
     List<ExtendedIngredient>  list;
 
-    public IngredientsAdapter(Context context, List<ExtendedIngredient> list) {
+    public IngAda(Context context, List<ExtendedIngredient> list) {
         this.context = context;
         this.list = list;
     }
